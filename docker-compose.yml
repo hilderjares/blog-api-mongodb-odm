@@ -1,0 +1,25 @@
+version: "3.4"
+
+services:
+  cli:
+    container_name: php-cli
+    command: "composer install"
+    build:
+      context: .
+      target: cli
+    volumes:
+      - ./:/app
+
+  app:
+    container_name: php-app
+    build: .
+    ports:
+      - 8080:80
+    volumes:
+      - ./:/app
+
+  db:
+    image: mongo
+    restart: always
+    ports:
+      - '27017:27017'

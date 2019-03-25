@@ -1,0 +1,32 @@
+{
+    "authors": [
+        {
+            "name": "Hilderjares",
+            "email": "hiderjares@alu.ufc.br",
+            "homepage": "http://hilderjares.github.io/devnordeste",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "1.4.2",
+        "erandir/plug-route": "dev-master",
+        "doctrine/mongodb-odm": "^1.2",
+        "alcaeus/mongo-php-adapter": "dev-master"
+    },
+    "require-dev":{
+        "phpunit/phpunit": "^7.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Acme\\": "src/"
+        },
+    	"files": [
+    		"src/functions.php"
+    	]
+    },
+    "config": {
+        "platform": {
+            "ext-mongo": "1.6.16"
+        }
+    }
+}
