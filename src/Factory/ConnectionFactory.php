@@ -27,4 +27,4 @@ class ConnectionFactory
 
 		return (new DatabaseConnection($config))->getDocumentManager();
 	}
-}
+} 
