@@ -73,5 +73,5 @@ class DatabaseConfiguration
     public function getPassword(): string
     {
         return $this->password;
-	}
+    }
 }
