@@ -12,7 +12,7 @@ class ConnectionFactory
 		$file = realpath("../config/localhost.ini");
 
 		if (!file_exists($file)) {
-    		throw new \RuntimeException('Configuration not found file.');
+			throw new \RuntimeException('Configuration not found file.');
 		}	
 
 		$host = parse_ini_file($file, true);
