@@ -56,7 +56,7 @@ Class UserController
 		if (count($data) > 0) {
 			return $this->response->setStatusCode(200)->json($data);
 		}
-		return $this->response->setStatusCode(400)->json(['msg' => 'Not found users']);
+		return $this->response->setStatusCode(404)->json(['msg' => 'Not found users']);
 	}
 
 	public function find(Request $request)
@@ -86,7 +86,7 @@ Class UserController
 		
 			return $this->response->setStatusCode(200)->json($data);
 		}
-		return $this->response->setStatusCode(400)->json(['msg' => 'Not found user']);
+		return $this->response->setStatusCode(404)->json(['msg' => 'Not found user']);
 	}
 
 	public function storage(Request $request)
@@ -102,9 +102,9 @@ Class UserController
 		$this->userRepository->save($this->user);
 
 		if (!is_null($this->user->getId())) {
-			return $this->response->setStatusCode(200)->json(['msg' => "Created user id {$this->user->getId()}"]);
+			return $this->response->setStatusCode(201)->json(['msg' => "Created user id {$this->user->getId()}"]);
 		}
-		return $this->response->setStatusCode(400)->json(['msg' => 'Not created user']);
+		return $this->response->setStatusCode(404)->json(['msg' => 'Not created user']);
 	}
 
 	public function update(Request $request)
@@ -138,6 +138,6 @@ Class UserController
 			$this->userRepository->remove($user);
 			return $this->response->setStatusCode(200)->json(['msg' => 'Deleted user successfully']);
 		}
-		return $this->response->setStatusCode(400)->json(['msg' => 'Not deleted user']);
+		return $this->response->setStatusCode(204)->json(['msg' => 'Not deleted user']);
 	}
 }
