@@ -1,4 +1,4 @@
-*** Use cURL to test requests
+### Use cURL to test requests
 
 ```
 $ curl --request DELETE http://localhost:8080/api/user/id
@@ -10,7 +10,7 @@ $ curl --request POST http://localhost:8080/api/user --data "@data.txt"
 $ curl --request PUT http://localhost:8080/api/user/id --data "@data.txt" 
 ```
 
-*** HTTP Verbs
+### HTTP Verbs
 
 > HTTP defines a set of request methods to indicate the desired action to be performed for a given resource.
 
@@ -21,20 +21,20 @@ $ curl --request PUT http://localhost:8080/api/user/id --data "@data.txt"
 | ```PUT``` | The PUT method replaces all current representations of the target resource with the request payload. |
 | ```DELETE``` | The DELETE method deletes the specified resource. |
 
-***Success Codes
+### Success Codes
 
 > If your request has been successful, you will receive one of the following status codes:
 
 ```
    - 200 OK
-    Success (e.g., resource updated or retrieved, etc.). Note: a body is not always returned.
+     Success (e.g., resource updated or retrieved, etc.). Note: a body is not always returned.
 
    - 201 Created
-    A new resource has been successfully created (a Thng, collection, etc.). The Location header will contain the URL of the resource. The response payload will contain the resource created in the body.
+     A new resource has been successfully created (a Thng, collection, etc.). The Location header will contain the URL of the resource. The response payload will contain the resource created in the body.
 
    - 202 Accepted
-    The request was accepted successfully, and will be fulfilled asynchronously. In most cases, the resource can be polled for completion status.
+     The request was accepted successfully, and will be fulfilled asynchronously. In most cases, the resource can be polled for completion status.
 
    - 204 No Content
-    The request was successful, and there are no results to return. An example of this is a DELETE operation.
+     The request was successful, and there are no results to return. An example of this is a DELETE operation.
 ```
