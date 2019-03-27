@@ -1,4 +1,4 @@
-### Use cURL to test requests
+### Use curl to test requests
 
 ```
 $ curl --request DELETE http://localhost:8080/api/user/id
